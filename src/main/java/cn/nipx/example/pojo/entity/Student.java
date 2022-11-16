@@ -1,9 +1,6 @@
 package cn.nipx.example.pojo.entity;
 
-import com.baomidou.mybatisplus.annotation.SqlCondition;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,7 +13,7 @@ import java.util.Date;
  */
 @TableName(value = "student")
 @Data
-public class Student implements Serializable {
+public class Student {
 
     @TableId
     private Long id;
@@ -36,6 +33,7 @@ public class Student implements Serializable {
 
     private Long updateBy;
 
+    @TableLogic
     private Integer isDeleted;
 
 }

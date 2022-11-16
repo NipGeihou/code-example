@@ -10,8 +10,14 @@ import lombok.Data;
 @Data
 public class StudentQuery {
 
+    /**
+     * 学生学号
+     */
     private String code;
 
+    /**
+     * 学生姓名（模糊查询）
+     */
     private String name;
 
 }

@@ -29,7 +29,7 @@ public class StudentController {
      * @param query
      * @return
      */
-    @GetMapping()
+    @GetMapping
     public Result<List<StudentResp>> list(StudentQuery query) {
         return Result.ofSuccess(studentService.list(query));
     }
@@ -51,8 +51,8 @@ public class StudentController {
      * @param req
      * @return
      */
-    @PostMapping()
-    public Result<Boolean> create(@RequestBody @Validated StudentReq req) {
+    @PostMapping
+    public Result<Void> create(@RequestBody @Validated StudentReq req) {
         studentService.save(req);
         return Result.ofSuccessMsg("新增成功");
     }
@@ -64,7 +64,7 @@ public class StudentController {
      * @return
      */
     @PutMapping()
-    public Result<Boolean> update(@RequestBody @Validated StudentReq req) {
+    public Result<Void> update(@RequestBody @Validated StudentReq req) {
         studentService.updateById(req);
         return Result.ofSuccessMsg("更新成功");
     }
@@ -76,7 +76,7 @@ public class StudentController {
      * @return
      */
     @DeleteMapping("/{id}")
-    public Result<Boolean> delete(@PathVariable Long id) {
+    public Result<Void> delete(@PathVariable Long id) {
         studentService.deleteById(id);
         return Result.ofSuccessMsg("删除成功");
     }

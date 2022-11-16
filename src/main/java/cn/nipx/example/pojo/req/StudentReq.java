@@ -1,8 +1,9 @@
 package cn.nipx.example.pojo.req;
 
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -11,13 +12,14 @@ import java.io.Serializable;
  * @author NipGeihou
  */
 @Data
-public class StudentReq implements Serializable {
+public class StudentReq {
 
     private Long id;
 
-    @NotNull
+    @NotBlank(message = "学生学号不能为空")
     private String code;
 
+    @NotBlank(message = "学生姓名不能为空")
     private String name;
 
     private String remark;
